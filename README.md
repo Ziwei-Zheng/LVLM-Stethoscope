@@ -5,9 +5,12 @@
 [![Static Badge](https://img.shields.io/badge/Paper-Arxiv-red)]()
 
 
-[Le Yang*+](https://github.com/yangle15), [Ziwei Zheng*](https://github.com/Ziwei-Zheng), Boxu Chen
+[Le Yang*](https://github.com/yangle15), [Ziwei Zheng*](https://github.com/Ziwei-Zheng), [Boxu Chen](https://github.com/Chen-Boxu) (*equal contribution)
 
 This repository contains the code of LVLM-Stethoscope, which can be used for diagnosing Large Vision-langurage models predictions, either in production or while developing models.
+
+
+![LLaVA-1.5-7B-HF](demo.gif)
 
 
 **🤔️ Why Building this Project?**
@@ -103,12 +106,12 @@ If you have any questions on how to build with customized models, please feel fr
 
 ## Citation
 If you find this project helpful for your research, please consider citing the following BibTeX entry.
-```BibTex
+<!-- ```BibTex
 @article{kirillov2023segany,
   title={Segment Anything}, 
   author={Kirillov, Alexander and Mintun, Eric and Ravi, Nikhila and Mao, Hanzi and Rolland, Chloe and Gustafson, Laura and Xiao, Tete and Whitehead, Spencer and Berg, Alexander C. and Lo, Wan-Yen and Doll{\'a}r, Piotr and Girshick, Ross},
   journal={arXiv:2304.02643},
   year={2023}
 }
-```
+``` -->
 
