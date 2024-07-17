@@ -20,13 +20,13 @@ class ConvNeXtCLIPVisionTower(nn.Module):
         self.vision_five_stage_width = getattr(args, 'vision_five_stage_width', 1536)
 
         if not delay_load:
-            self.load_model(args.model_path, args.part_on_cpu) ######################## updated
+            self.load_model()
         else:
             print(f"deloy_load vision tower is: {self.vision_tower_name}")
             self.cfg_only = ConvNextConfig.from_pretrained(
                 self.vision_tower_name)
 
-    def load_model(self, model_path, part_on_cpu): ######################## updated
+    def load_model(self):
         print(f"entering load model, load {self.vision_tower_name}")
         self.image_processor = CLIPImageProcessor.from_pretrained(
             self.vision_tower_name)
@@ -51,17 +51,6 @@ class ConvNeXtCLIPVisionTower(nn.Module):
             print(
                 f'Added stage with width {self.vision_five_stage_width}')
         
-        ######################## updated
-        import os
-        device = 'cpu' if part_on_cpu else 'cuda' 
-        state_dict = torch.load(os.path.join(model_path, 'pytorch_model-00002-of-00002.bin'), map_location=device)
-        prefix = 'model.vision_tower.vision_tower.'
-        state_dict = {k.replace(prefix, ''): v for k, v in state_dict.items() if k.startswith(prefix)}
-        self.vision_tower.to(device, dtype=torch.float32)
-        self.vision_tower.load_state_dict(state_dict, strict=False)
-        print('Loaded weights for vision_tower from pytorch_model-00002-of-00002.bin')
-
-
     def forward(self, images):
         if type(images) is list:
             image_features = []
@@ -81,7 +70,7 @@ class ConvNeXtCLIPVisionTower(nn.Module):
             if self.part_on_cpu: ######################## updated
                 embedding_output = self.vision_tower.embeddings(images.to('cpu')) 
             else:
-                embedding_output = self.vision_tower.embeddings(images)
+                embedding_output = self.vision_tower.embeddings(images.to('cuda'))
             image_features = self.vision_tower.encoder(embedding_output,
                                                        output_hidden_states=True,
                                                        return_dict=True)
@@ -113,7 +102,6 @@ class ConvNeXtCLIPVisionTower(nn.Module):
 
     def add_stage(self, depths=3, hidden_dims=3072):
         self.vision_tower.encoder.stages.append(ConvNextStage(self.config, self.hidden_size, hidden_dims, depth=depths))
-        self.vision_tower.layernorm = nn.LayerNorm((3072,), eps=1e-12, elementwise_affine=True) ######################## updated
         self.vision_tower.config.depths.append(depths)
         self.vision_tower.config.hidden_sizes.append(hidden_dims)
         self.vision_tower.config.stage_names.append('stage5')

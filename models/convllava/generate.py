@@ -4,7 +4,7 @@ from PIL import Image
 conv-llava/llava->convllava
 
 ConvLLaVA-sft-1536,1024,768
-LAION-CLIP-ConvNeXt-Large-512
+ConvLLaVA-ConvNeXt-1536,1024,768
 """
 from convllava.constants import DEFAULT_IMAGE_PATCH_TOKEN, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 from convllava.conversation import conv_templates, SeparatorStyle
@@ -23,11 +23,11 @@ class ConvLLaVAForAnalysis():
 
     def __init__(self, args):
         
-        self.tokenizer, self.model, self.image_processor, context_len = load_pretrained_model(args.model_name, args.model_name, args.load_8bit, args.load_4bit, args.part_on_cpu, device='cuda')
+        self.tokenizer, self.model, self.image_processor, context_len = load_pretrained_model(args.model_name, args.model_name, args.load_8bit, args.load_4bit, device='cuda')
         if args.part_on_cpu:
             self.model.model.vision_tower.to('cpu', dtype=torch.float32)
-        self.args = args
         self.model.model.vision_tower.part_on_cpu = args.part_on_cpu
+        self.args = args
         
         self.model.num_img_tokens = self.model.model.vision_tower.num_patches // self.model.model.vision_tower.config.patch_size
         self.model.num_img_patches = self.model.num_img_tokens
