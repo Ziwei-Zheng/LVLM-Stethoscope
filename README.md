@@ -71,9 +71,9 @@ Specify the name in [["llava-hf/llava-1.5-7b-hf"](https://huggingface.co/llava-h
 CUDA_VISIBLE_DEVICES=[GPUS] python demo_meta.py --model-name [MODEL_NAME]
 ```
 
-Note that since not all sub-models (e.g. ViT & Q-former) in MiniGPT-4 and ConvLLaVA codebases are using [transformers](https://huggingface.co/docs/transformers/v4.41.3/en/index) backends, they are not able to run in multi-GPUs. You can 1) Run the whole model within one single GPU (> 40G memory), or 2) Run sub-models that are not included in [transformers](https://huggingface.co/docs/transformers/v4.41.3/en/index) on CPU by parsing `--part-on-cpu` and other parts (e.g. LLaMA) on single or multi-GPUs to save memory.
+Note that since not all sub-models (e.g. ViT & Q-former) in MiniGPT-4 codebases are using [transformers](https://huggingface.co/docs/transformers/v4.41.3/en/index) backends, they are not able to run in multi-GPUs. You can 1) Run the whole model within one single GPU (> 40G memory), or 2) Run sub-models that are not included in [transformers](https://huggingface.co/docs/transformers/v4.41.3/en/index) on CPU by parsing `--part-on-cpu` and other parts (e.g. LLaMA) on single or multi-GPUs to save memory.
 
-We have tested llava-1.5-7b & blip2-opt-6.7b on 2 RTX 4090 GPUs with 24G memory, and minigpt4-7b & conv-llava-7b on 1 RTX 4090 GPU with `--part-on-cpu` enabled.
+We have tested llava-1.5-7b & blip2-opt-6.7b & ConvLLaVA-sft-1536/1024/768 on 2 RTX 4090 GPUs with 24G memory, and minigpt4-7b on 1 RTX 4090 GPU with `--part-on-cpu` enabled.
 
 
 ### Run customized models
