@@ -59,12 +59,13 @@ Git clone our repository, creating a python environment and activate it via the 
 git clone https://github.com/Ziwei-Zheng/LVLM-Stethoscope.git
 cd LVLM-Stethoscope
 conda create --name lvlm-ss python=3.10
+conda activate lvlm-ss
 pip install -r requirements.txt
 ```
 
 ### Run supported models
 
-Specify the name in [["llava-hf/llava-1.5-7b-hf"](https://huggingface.co/llava-hf/llava-1.5-7b-hf), ["Salesforce/blip2-opt-6.7b"](https://huggingface.co/Salesforce/blip2-opt-6.7b), "minigpt4-7b", "conv-llava-7b"] to run the model. Then open the local URL to start conversation (default: http://127.0.0.1:7860)
+Specify the name in [["llava-hf/llava-1.5-7b-hf"](https://huggingface.co/llava-hf/llava-1.5-7b-hf), ["Salesforce/blip2-opt-6.7b"](https://huggingface.co/Salesforce/blip2-opt-6.7b), "minigpt4-7b", [&#34;ConvLLaVA-sft-1536/1024/768&#34;](https://huggingface.co/ConvLLaVA)] to run the model. Then open the local URL to start conversation (default: http://127.0.0.1:7860)
 
 ```bash
 CUDA_VISIBLE_DEVICES=[GPUS] python demo_meta.py --model-name [MODEL_NAME]
