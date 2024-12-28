@@ -8,9 +8,10 @@
 <!-- Main contributor: [Le Yang](https://github.com/yangle15), [Ziwei Zheng](https://github.com/Ziwei-Zheng), [Boxu Chen](https://github.com/Chen-Boxu) -->
 
 [Ziwei Zheng](https://github.com/Ziwei-Zheng), [Boxu Chen](https://github.com/Chen-Boxu), [Le Yang](https://github.com/yangle15)+, Zhengyu Zhao, Chenhao Lin, Chao Shen. 
+
 +Project leader. 
 
-XJTU AISEC Team.
+**XJTU AISEC Team**
 
 
 This repository contains the code of LVLM-Stethoscope, which can be used for diagnosing Large Vision-langurage models predictions, either in production or while developing models.
