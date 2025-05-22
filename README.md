@@ -18,7 +18,7 @@
 
 
 -----------------
-*We are updating this project. The following parts are the only version named as LVLM-Stethoscope.*
+❗️*We are updating this project. The following parts are the only version named as LVLM-Stethoscope.*❗️
 
 ------
 This repository contains the code of LVLM-Stethoscope, which can be used for diagnosing Large Vision-langurage models predictions, either in production or while developing models.
