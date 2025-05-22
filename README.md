@@ -1,4 +1,7 @@
-# 🩺LVLM-Stethoscope
+# 🩺Seeing It or Not? Interpretable Vision-aware Latent Steering to Mitigate Object Hallucinations
+
+
+<!-- # 🩺LVLM-Stethoscope -->
 
 
 <!-- [![Static Badge](https://img.shields.io/badge/Project-Page-Green)]()
@@ -7,11 +10,12 @@
 
 <!-- Main contributor: [Le Yang](https://github.com/yangle15), [Ziwei Zheng](https://github.com/Ziwei-Zheng), [Boxu Chen](https://github.com/Chen-Boxu) -->
 
-[Ziwei Zheng](https://github.com/Ziwei-Zheng), [Boxu Chen](https://github.com/Chen-Boxu), [Le Yang](https://github.com/yangle15)+, Zhengyu Zhao, Chenhao Lin, Chao Shen. 
+[Boxu Chen*](https://github.com/Chen-Boxu), [Ziwei Zheng*](https://github.com/Ziwei-Zheng), , [Le Yang+](https://github.com/yangle15), Zeyu Geng, Zhengyu Zhao, Chenhao Lin, Chao Shen. 
 
+*Equal contribution.
 +Project leader. 
 
-**XJTU AISEC Team**
+**XJTU AI-SEC Team**
 
 
 This repository contains the code of LVLM-Stethoscope, which can be used for diagnosing Large Vision-langurage models predictions, either in production or while developing models.
