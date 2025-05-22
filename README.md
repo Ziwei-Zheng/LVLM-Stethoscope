@@ -1,7 +1,6 @@
 # 🩺Seeing It or Not? Interpretable Vision-aware Latent Steering to Mitigate Object Hallucinations
 
 
-<!-- # 🩺LVLM-Stethoscope -->
 
 
 <!-- [![Static Badge](https://img.shields.io/badge/Project-Page-Green)]()
@@ -18,6 +17,10 @@
 **XJTU AI-SEC Team**
 
 
+-----------------
+*We have updated the whole project, the following *
+
+------
 This repository contains the code of LVLM-Stethoscope, which can be used for diagnosing Large Vision-langurage models predictions, either in production or while developing models.
 
 
